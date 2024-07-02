@@ -539,3 +539,4 @@ Now we can open up a notebook → Kernel (top menu bar) → Change Kernel → `v
 jupyter kernelspec list
 jupyter kernelspec uninstall venv
 ```
+
