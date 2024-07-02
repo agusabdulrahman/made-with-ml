@@ -1,4 +1,5 @@
 # made-with-ml<div align="center">
+
 <h1><img width="30" src="https://madewithml.com/static/images/rounded_logo.png">&nbsp;<a href="https://madewithml.com/">Made With ML</a></h1>
 Design · Develop · Deploy · Iterate
 <br>
@@ -24,16 +25,16 @@ Join 40K+ developers in learning how to responsibly deliver value with ML.
 
 Learn how to combine machine learning with software engineering to design, develop, deploy and iterate on production-grade ML applications.
 
-- Lessons: https://madewithml.com/
-- Code: [GokuMohandas/Made-With-ML](https://github.com/GokuMohandas/Made-With-ML)
+- Lessons: Ongoing
+- Code: [Ongoing](https://github.com/agusabdulrahman/Made-With-ML)
 
-<a href="https://madewithml.com/#course">
+<a href="Ongoing">
   <img src="https://madewithml.com/static/images/lessons.png" alt="lessons">
 </a>
 
 ## Overview
 
-In this course, we'll go from experimentation (design + development) to production (deployment + iteration). We'll do this iteratively by motivating the components that will enable us to build a *reliable* production system.
+In this course, we'll go from experimentation (design + development) to production (deployment + iteration). We'll do this iteratively by motivating the components that will enable us to build a _reliable_ production system.
 
 <blockquote>
   <img width=20 src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/640px-YouTube_full-color_icon_%282017%29.svg.png">&nbsp; Be sure to watch the video below for a quick overview of what we'll be building.
@@ -76,28 +77,30 @@ We'll start by setting up our cluster with the environment and compute configura
 <details open>
   <summary>Anyscale</summary><br>
 
-  We can create an [Anyscale Workspace](https://docs.anyscale.com/develop/workspaces/get-started) using the [webpage UI](https://console.anyscale.com/o/madewithml/workspaces/add/blank).
+We can create an [Anyscale Workspace](https://docs.anyscale.com/develop/workspaces/get-started) using the [webpage UI](https://console.anyscale.com/o/madewithml/workspaces/add/blank).
 
-  ```md
-  - Workspace name: `madewithml`
-  - Project: `madewithml`
-  - Cluster environment name: `madewithml-cluster-env`
-  # Toggle `Select from saved configurations`
-  - Compute config: `madewithml-cluster-compute-g5.4xlarge`
-  ```
+```md
+- Workspace name: `madewithml`
+- Project: `madewithml`
+- Cluster environment name: `madewithml-cluster-env`
 
-  > Alternatively, we can use the [CLI](https://docs.anyscale.com/reference/anyscale-cli) to create the workspace via `anyscale workspace create ...`
+# Toggle `Select from saved configurations`
+
+- Compute config: `madewithml-cluster-compute-g5.4xlarge`
+```
+
+> Alternatively, we can use the [CLI](https://docs.anyscale.com/reference/anyscale-cli) to create the workspace via `anyscale workspace create ...`
 
 </details>
 
 <details>
   <summary>Other (cloud platforms, K8s, on-prem)</summary><br>
 
-  If you don't want to do this course locally or via Anyscale, you have the following options:
+If you don't want to do this course locally or via Anyscale, you have the following options:
 
-  - On [AWS and GCP](https://docs.ray.io/en/latest/cluster/vms/index.html#cloud-vm-index). Community-supported Azure and Aliyun integrations also exist.
-  - On [Kubernetes](https://docs.ray.io/en/latest/cluster/kubernetes/index.html#kuberay-index), via the officially supported KubeRay project.
-  - Deploy Ray manually [on-prem](https://docs.ray.io/en/latest/cluster/vms/user-guides/launching-clusters/on-premises.html#on-prem) or onto platforms [not listed here](https://docs.ray.io/en/latest/cluster/vms/user-guides/community/index.html#ref-cluster-setup).
+- On [AWS and GCP](https://docs.ray.io/en/latest/cluster/vms/index.html#cloud-vm-index). Community-supported Azure and Aliyun integrations also exist.
+- On [Kubernetes](https://docs.ray.io/en/latest/cluster/kubernetes/index.html#kuberay-index), via the officially supported KubeRay project.
+- Deploy Ray manually [on-prem](https://docs.ray.io/en/latest/cluster/vms/user-guides/launching-clusters/on-premises.html#on-prem) or onto platforms [not listed here](https://docs.ray.io/en/latest/cluster/vms/user-guides/community/index.html#ref-cluster-setup).
 
 </details>
 
@@ -116,10 +119,12 @@ git clone https://github.com/GokuMohandas/Made-With-ML.git .
 ```bash
 touch .env
 ```
+
 ```bash
 # Inside .env
 GITHUB_USERNAME="CHANGE_THIS_TO_YOUR_USERNAME"  # ← CHANGE THIS
 ```
+
 ```bash
 source .env
 ```
@@ -129,29 +134,30 @@ source .env
 <details>
   <summary>Local</summary><br>
 
-  ```bash
-  export PYTHONPATH=$PYTHONPATH:$PWD
-  python3 -m venv venv  # recommend using Python 3.10
-  source venv/bin/activate  # on Windows: venv\Scripts\activate
-  python3 -m pip install --upgrade pip setuptools wheel
-  python3 -m pip install -r requirements.txt
-  pre-commit install
-  pre-commit autoupdate
-  ```
+```bash
+export PYTHONPATH=$PYTHONPATH:$PWD
+python3 -m venv venv  # recommend using Python 3.10
+source venv/bin/activate  # on Windows: venv\Scripts\activate
+python3 -m pip install --upgrade pip setuptools wheel
+python3 -m pip install -r requirements.txt
+pre-commit install
+pre-commit autoupdate
+```
 
-  > Highly recommend using Python `3.10` and using [pyenv](https://github.com/pyenv/pyenv) (mac) or [pyenv-win](https://github.com/pyenv-win/pyenv-win) (windows).
+> Highly recommend using Python `3.10` and using [pyenv](https://github.com/pyenv/pyenv) (mac) or [pyenv-win](https://github.com/pyenv-win/pyenv-win) (windows).
 
 </details>
 
 <details open>
   <summary>Anyscale</summary><br>
 
-  Our environment with the appropriate Python version and libraries is already all set for us through the cluster environment we used when setting up our Anyscale Workspace. So we just need to run these commands:
-  ```bash
-  export PYTHONPATH=$PYTHONPATH:$PWD
-  pre-commit install
-  pre-commit autoupdate
-  ```
+Our environment with the appropriate Python version and libraries is already all set for us through the cluster environment we used when setting up our Anyscale Workspace. So we just need to run these commands:
+
+```bash
+export PYTHONPATH=$PYTHONPATH:$PWD
+pre-commit install
+pre-commit autoupdate
+```
 
 </details>
 
@@ -166,9 +172,9 @@ Start by exploring the [jupyter notebook](notebooks/madewithml.ipynb) to interac
 <details>
   <summary>Local</summary><br>
 
-  ```bash
-  # Start notebook
-  jupyter lab notebooks/madewithml.ipynb
+```bash
+# Start notebook
+jupyter lab notebooks/madewithml.ipynb
 ```
 
 </details>
@@ -176,10 +182,9 @@ Start by exploring the [jupyter notebook](notebooks/madewithml.ipynb) to interac
 <details open>
   <summary>Anyscale</summary><br>
 
-  Click on the Jupyter icon &nbsp;<img width=15 src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png">&nbsp; at the top right corner of our Anyscale Workspace page and this will open up our JupyterLab instance in a new tab. Then navigate to the `notebooks` directory and open up the `madewithml.ipynb` notebook.
+Click on the Jupyter icon &nbsp;<img width=15 src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png">&nbsp; at the top right corner of our Anyscale Workspace page and this will open up our JupyterLab instance in a new tab. Then navigate to the `notebooks` directory and open up the `madewithml.ipynb` notebook.
 
 </details>
-
 
 ## Scripts
 
@@ -201,6 +206,7 @@ madewithml
 **Note**: Change the `--num-workers`, `--cpu-per-worker`, and `--gpu-per-worker` input argument values below based on your system's resources. For example, if you're on a local laptop, a reasonable configuration would be `--num-workers 6 --cpu-per-worker 1 --gpu-per-worker 0`.
 
 ### Training
+
 ```bash
 export EXPERIMENT_NAME="llm"
 export DATASET_LOC="https://raw.githubusercontent.com/GokuMohandas/Made-With-ML/main/datasets/dataset.csv"
@@ -218,6 +224,7 @@ python madewithml/train.py \
 ```
 
 ### Tuning
+
 ```bash
 export EXPERIMENT_NAME="llm"
 export DATASET_LOC="https://raw.githubusercontent.com/GokuMohandas/Made-With-ML/main/datasets/dataset.csv"
@@ -248,23 +255,24 @@ mlflow server -h 0.0.0.0 -p 8080 --backend-store-uri $MODEL_REGISTRY
 <details>
   <summary>Local</summary><br>
 
-  If you're running this notebook on your local laptop then head on over to <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a> to view your MLflow dashboard.
+If you're running this notebook on your local laptop then head on over to <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a> to view your MLflow dashboard.
 
 </details>
 
 <details open>
   <summary>Anyscale</summary><br>
 
-  If you're on <a href="https://docs.anyscale.com/develop/workspaces/get-started" target="_blank">Anyscale Workspaces</a>, then we need to first expose the port of the MLflow server. Run the following command on your Anyscale Workspace terminal to generate the public URL to your MLflow server.
+If you're on <a href="https://docs.anyscale.com/develop/workspaces/get-started" target="_blank">Anyscale Workspaces</a>, then we need to first expose the port of the MLflow server. Run the following command on your Anyscale Workspace terminal to generate the public URL to your MLflow server.
 
-  ```bash
-  APP_PORT=8080
-  echo https://$APP_PORT-port-$ANYSCALE_SESSION_DOMAIN
-  ```
+```bash
+APP_PORT=8080
+echo https://$APP_PORT-port-$ANYSCALE_SESSION_DOMAIN
+```
 
 </details>
 
 ### Evaluation
+
 ```bash
 export EXPERIMENT_NAME="llm"
 export RUN_ID=$(python madewithml/predict.py get-best-run-id --experiment-name $EXPERIMENT_NAME --metric val_loss --mode ASC)
@@ -274,6 +282,7 @@ python madewithml/evaluate.py \
     --dataset-loc $HOLDOUT_LOC \
     --results-fp results/evaluation_results.json
 ```
+
 ```json
 {
   "timestamp": "June 09, 2023 09:26:18 AM",
@@ -288,6 +297,7 @@ python madewithml/evaluate.py \
 ```
 
 ### Inference
+
 ```bash
 export EXPERIMENT_NAME="llm"
 export RUN_ID=$(python madewithml/predict.py get-best-run-id --experiment-name $EXPERIMENT_NAME --metric val_loss --mode ASC)
@@ -296,18 +306,19 @@ python madewithml/predict.py predict \
     --title "Transfer learning with transformers" \
     --description "Using transformers for transfer learning on text classification tasks."
 ```
+
 ```json
-[{
-  "prediction": [
-    "natural-language-processing"
-  ],
-  "probabilities": {
-    "computer-vision": 0.0009767753,
-    "mlops": 0.0008223939,
-    "natural-language-processing": 0.99762577,
-    "other": 0.000575123
+[
+  {
+    "prediction": ["natural-language-processing"],
+    "probabilities": {
+      "computer-vision": 0.0009767753,
+      "mlops": 0.0008223939,
+      "natural-language-processing": 0.99762577,
+      "other": 0.000575123
+    }
   }
-}]
+]
 ```
 
 ### Serving
@@ -315,63 +326,64 @@ python madewithml/predict.py predict \
 <details>
   <summary>Local</summary><br>
 
-  ```bash
-  # Start
-  ray start --head
-  ```
+```bash
+# Start
+ray start --head
+```
 
-  ```bash
-  # Set up
-  export EXPERIMENT_NAME="llm"
-  export RUN_ID=$(python madewithml/predict.py get-best-run-id --experiment-name $EXPERIMENT_NAME --metric val_loss --mode ASC)
-  python madewithml/serve.py --run_id $RUN_ID
-  ```
+```bash
+# Set up
+export EXPERIMENT_NAME="llm"
+export RUN_ID=$(python madewithml/predict.py get-best-run-id --experiment-name $EXPERIMENT_NAME --metric val_loss --mode ASC)
+python madewithml/serve.py --run_id $RUN_ID
+```
 
-  Once the application is running, we can use it via cURL, Python, etc.:
+Once the application is running, we can use it via cURL, Python, etc.:
 
-  ```python
-  # via Python
-  import json
-  import requests
-  title = "Transfer learning with transformers"
-  description = "Using transformers for transfer learning on text classification tasks."
-  json_data = json.dumps({"title": title, "description": description})
-  requests.post("http://127.0.0.1:8000/predict", data=json_data).json()
-  ```
+```python
+# via Python
+import json
+import requests
+title = "Transfer learning with transformers"
+description = "Using transformers for transfer learning on text classification tasks."
+json_data = json.dumps({"title": title, "description": description})
+requests.post("http://127.0.0.1:8000/predict", data=json_data).json()
+```
 
-  ```bash
-  ray stop  # shutdown
-  ```
+```bash
+ray stop  # shutdown
+```
 
 </details>
 
 <details open>
   <summary>Anyscale</summary><br>
 
-  In Anyscale Workspaces, Ray is already running so we don't have to manually start/shutdown like we have to do locally.
+In Anyscale Workspaces, Ray is already running so we don't have to manually start/shutdown like we have to do locally.
 
-  ```bash
-  # Set up
-  export EXPERIMENT_NAME="llm"
-  export RUN_ID=$(python madewithml/predict.py get-best-run-id --experiment-name $EXPERIMENT_NAME --metric val_loss --mode ASC)
-  python madewithml/serve.py --run_id $RUN_ID
-  ```
+```bash
+# Set up
+export EXPERIMENT_NAME="llm"
+export RUN_ID=$(python madewithml/predict.py get-best-run-id --experiment-name $EXPERIMENT_NAME --metric val_loss --mode ASC)
+python madewithml/serve.py --run_id $RUN_ID
+```
 
-  Once the application is running, we can use it via cURL, Python, etc.:
+Once the application is running, we can use it via cURL, Python, etc.:
 
-  ```python
-  # via Python
-  import json
-  import requests
-  title = "Transfer learning with transformers"
-  description = "Using transformers for transfer learning on text classification tasks."
-  json_data = json.dumps({"title": title, "description": description})
-  requests.post("http://127.0.0.1:8000/predict", data=json_data).json()
-  ```
+```python
+# via Python
+import json
+import requests
+title = "Transfer learning with transformers"
+description = "Using transformers for transfer learning on text classification tasks."
+json_data = json.dumps({"title": title, "description": description})
+requests.post("http://127.0.0.1:8000/predict", data=json_data).json()
+```
 
 </details>
 
 ### Testing
+
 ```bash
 # Code
 python3 -m pytest tests/code --verbose --disable-warnings
@@ -394,7 +406,7 @@ python3 -m pytest tests/code --cov madewithml --cov-report term --disable-warnin
 
 From this point onwards, in order to deploy our application into production, we'll need to either be on Anyscale or on a [cloud VM](https://docs.ray.io/en/latest/cluster/vms/index.html#cloud-vm-index) / [on-prem](https://docs.ray.io/en/latest/cluster/vms/user-guides/launching-clusters/on-premises.html#on-prem) cluster you manage yourself (w/ Ray). If not on Anyscale, the commands will be [slightly different](https://docs.ray.io/en/latest/cluster/running-applications/job-submission/index.html) but the concepts will be the same.
 
-> If you don't want to set up all of this yourself, we highly recommend joining our [upcoming live cohort](https://4190urw86oh.typeform.com/madewithml){:target="_blank"} where we'll provide an environment with all of this infrastructure already set up for you so that you just focused on the machine learning.
+> If you don't want to set up all of this yourself, we highly recommend joining our [upcoming live cohort](https://4190urw86oh.typeform.com/madewithml){:target="\_blank"} where we'll provide an environment with all of this infrastructure already set up for you so that you just focused on the machine learning.
 
 <div align="center">
   <img src="https://madewithml.com/static/images/mlops/jobs_and_services/manual.png">
@@ -404,7 +416,7 @@ From this point onwards, in order to deploy our application into production, we'
 
 These credentials below are **automatically** set for us if we're using Anyscale Workspaces. We **do not** need to set these credentials explicitly on Workspaces but we do if we're running this locally or on a cluster outside of where our Anyscale Jobs and Services are configured to run.
 
-``` bash
+```bash
 export ANYSCALE_HOST=https://console.anyscale.com
 export ANYSCALE_CLI_TOKEN=$YOUR_CLI_TOKEN  # retrieved from Anyscale credentials page
 ```
@@ -430,17 +442,19 @@ anyscale cluster-compute create deploy/cluster_compute.yaml --name $CLUSTER_COMP
 ### Anyscale jobs
 
 Now we're ready to execute our ML workloads. We've decided to combine them all together into one [job](./deploy/jobs/workloads.yaml) but we could have also created separate jobs for each workload (train, evaluate, etc.) We'll start by editing the `$GITHUB_USERNAME` slots inside our [`workloads.yaml`](./deploy/jobs/workloads.yaml) file:
+
 ```yaml
 runtime_env:
   working_dir: .
-  upload_path: s3://madewithml/$GITHUB_USERNAME/jobs  # <--- CHANGE USERNAME (case-sensitive)
+  upload_path: s3://madewithml/$GITHUB_USERNAME/jobs # <--- CHANGE USERNAME (case-sensitive)
   env_vars:
-    GITHUB_USERNAME: $GITHUB_USERNAME  # <--- CHANGE USERNAME (case-sensitive)
+    GITHUB_USERNAME: $GITHUB_USERNAME # <--- CHANGE USERNAME (case-sensitive)
 ```
 
 The `runtime_env` here specifies that we should upload our current `working_dir` to an S3 bucket so that all of our workers when we execute an Anyscale Job have access to the code to use. The `GITHUB_USERNAME` is used later to save results from our workloads to S3 so that we can retrieve them later (ex. for serving).
 
 Now we're ready to submit our job to execute our ML workloads:
+
 ```bash
 anyscale job submit deploy/jobs/workloads.yaml
 ```
@@ -454,12 +468,13 @@ ray_serve_config:
   import_path: deploy.services.serve_model:entrypoint
   runtime_env:
     working_dir: .
-    upload_path: s3://madewithml/$GITHUB_USERNAME/services  # <--- CHANGE USERNAME (case-sensitive)
+    upload_path: s3://madewithml/$GITHUB_USERNAME/services # <--- CHANGE USERNAME (case-sensitive)
     env_vars:
-      GITHUB_USERNAME: $GITHUB_USERNAME  # <--- CHANGE USERNAME (case-sensitive)
+      GITHUB_USERNAME: $GITHUB_USERNAME # <--- CHANGE USERNAME (case-sensitive)
 ```
 
 Now we're ready to launch our service:
+
 ```bash
 # Rollout service
 anyscale service rollout -f deploy/services/serve_model.yaml
@@ -486,6 +501,7 @@ We're not going to manually deploy our application every time we make a change. 
 </div>
 
 1. Create a new github branch to save our changes to and execute CI/CD workloads:
+
 ```bash
 git remote set-url origin https://github.com/$GITHUB_USERNAME/Made-With-ML.git  # <-- CHANGE THIS to your username
 git checkout -b dev
@@ -493,7 +509,7 @@ git checkout -b dev
 
 2. We'll start by adding the necessary credentials to the [`/settings/secrets/actions`](https://github.com/GokuMohandas/Made-With-ML/settings/secrets/actions) page of our GitHub repository.
 
-``` bash
+```bash
 export ANYSCALE_HOST=https://console.anyscale.com
 export ANYSCALE_CLI_TOKEN=$YOUR_CLI_TOKEN  # retrieved from https://console.anyscale.com/o/madewithml/credentials
 ```
@@ -531,12 +547,14 @@ With our CI/CD workflow in place to deploy our application, we can now focus on 
 ### Jupyter notebook kernels
 
 Issues with configuring the notebooks with jupyter? By default, jupyter will use the kernel with our virtual environment but we can also manually add it to jupyter:
+
 ```bash
 python3 -m ipykernel install --user --name=venv
 ```
+
 Now we can open up a notebook → Kernel (top menu bar) → Change Kernel → `venv`. To ever delete this kernel, we can do the following:
+
 ```bash
 jupyter kernelspec list
 jupyter kernelspec uninstall venv
 ```
-
