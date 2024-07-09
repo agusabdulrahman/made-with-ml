@@ -40,9 +40,9 @@ In this course, we'll go from experimentation (design + development) to producti
   <img width=20 src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/640px-YouTube_full-color_icon_%282017%29.svg.png">&nbsp; Be sure to watch the video below for a quick overview of what we'll be building.
 </blockquote>
 
-<div align="center">
+<!-- <div align="center">
   <a href="https://youtu.be/AWgkt8H8yVo"><img src="https://img.youtube.com/vi/AWgkt8H8yVo/0.jpg" alt="Course overview video"></a>
-</div>
+</div> -->
 
 <br>
 
@@ -111,7 +111,7 @@ Create a repository by following these instructions: [Create a new repository](h
 Now we're ready to clone the repository that has all of our code:
 
 ```bash
-git clone https://github.com/GokuMohandas/Made-With-ML.git .
+git clone https://github.com/agusabdulrahman/Made-With-ML.git .
 ```
 
 ### Credentials
@@ -166,7 +166,7 @@ pre-commit autoupdate
 Start by exploring the [jupyter notebook](notebooks/madewithml.ipynb) to interactively walkthrough the core machine learning workloads.
 
 <div align="center">
-  <img src="https://madewithml.com/static/images/mlops/systems-design/workloads.png">
+  <img src="https://github.com/agusabdulrahman/made-with-ml/blob/main/docs/img/flow%20notebook.gif">
 </div>
 
 <details>
