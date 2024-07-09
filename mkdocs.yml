@@ -1,0 +1,19 @@
+site_name: Made With ML
+site_url: https://madewithml.com/
+repo_url: https://github.com/agusabdulrahman/Made-With-ML/
+nav:
+  - Home: index.md
+  - src:
+      - data: src/data.md
+      - models: src/models.md
+      - train: src/train.md
+      - tune: src/tune.md
+      - evaluate: src/evaluate.md
+      - predict: src/predict.md
+      - serve: src/serve.md
+      - utils: src/utils.md
+theme: readthedocs
+plugins:
+  - mkdocstrings
+watch:
+  - . # reload docs for any file changes

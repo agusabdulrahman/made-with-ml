@@ -191,7 +191,7 @@ Click on the Jupyter icon &nbsp;<img width=15 src="https://upload.wikimedia.org/
 Now we'll execute the same workloads using the clean Python scripts following software engineering best practices (testing, documentation, logging, serving, versioning, etc.) The code we've implemented in our notebook will be refactored into the following scripts:
 
 ```bash
-madewithml
+src
 ├── config.py
 ├── data.py
 ├── evaluate.py
@@ -209,7 +209,7 @@ madewithml
 
 ```bash
 export EXPERIMENT_NAME="llm"
-export DATASET_LOC="https://raw.githubusercontent.com/GokuMohandas/Made-With-ML/main/datasets/dataset.csv"
+export DATASET_LOC="https://raw.githubusercontent.com/agusabdulrahman/Made-With-ML/main/datasets/dataset.csv"
 export TRAIN_LOOP_CONFIG='{"dropout_p": 0.5, "lr": 1e-4, "lr_factor": 0.8, "lr_patience": 3}'
 python madewithml/train.py \
     --experiment-name "$EXPERIMENT_NAME" \
