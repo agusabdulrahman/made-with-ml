@@ -13,7 +13,7 @@ Join 40K+ developers in learning how to responsibly deliver value with ML.
     <a target="_blank" href="https://madewithml.com/"><img src="https://img.shields.io/badge/Subscribe-40K-brightgreen"></a>&nbsp;
     <a target="_blank" href="https://github.com/agusabdulrahman/Made-With-ML"><img src="https://img.shields.io/github/stars/GokuMohandas/Made-With-ML.svg?style=social&label=Star"></a>&nbsp;
     <a target="_blank" href="https://www.linkedin.com/in/agusabdulrahman"><img src="https://img.shields.io/badge/style--5eba00.svg?label=LinkedIn&logo=linkedin&style=social"></a>&nbsp;
-    <a target="_blank" href="https://twitter.com/agusabdulrahman"><img src="https://img.shields.io/twitter/follow/GokuMohandas.svg?label=Follow&style=social"></a>
+    <a target="_blank" href="https://twitter.com/agusabdulrahman"><img src="https://img.shields.io/twitter/follow/agusabdulrahman.svg?label=Follow&style=social"></a>
     <br>
     🔥&nbsp; Among the <a href="https://github.com/agusabdulrahman/Made-With-ML" target="_blank">top ML repositories</a> on GitHub
 </div>
@@ -227,7 +227,7 @@ python madewithml/train.py \
 
 ```bash
 export EXPERIMENT_NAME="llm"
-export DATASET_LOC="https://raw.githubusercontent.com/GokuMohandas/Made-With-ML/main/datasets/dataset.csv"
+export DATASET_LOC="https://raw.githubusercontent.com/agusabdulrahman/Made-With-ML/main/datasets/dataset.csv"
 export TRAIN_LOOP_CONFIG='{"dropout_p": 0.5, "lr": 1e-4, "lr_factor": 0.8, "lr_patience": 3}'
 export INITIAL_PARAMS="[{\"train_loop_config\": $TRAIN_LOOP_CONFIG}]"
 python madewithml/tune.py \
@@ -276,7 +276,7 @@ echo https://$APP_PORT-port-$ANYSCALE_SESSION_DOMAIN
 ```bash
 export EXPERIMENT_NAME="llm"
 export RUN_ID=$(python madewithml/predict.py get-best-run-id --experiment-name $EXPERIMENT_NAME --metric val_loss --mode ASC)
-export HOLDOUT_LOC="https://raw.githubusercontent.com/GokuMohandas/Made-With-ML/main/datasets/holdout.csv"
+export HOLDOUT_LOC="https://raw.githubusercontent.com/agusabdulrahman/Made-With-ML/main/datasets/holdout.csv"
 python madewithml/evaluate.py \
     --run-id $RUN_ID \
     --dataset-loc $HOLDOUT_LOC \
@@ -389,7 +389,7 @@ requests.post("http://127.0.0.1:8000/predict", data=json_data).json()
 python3 -m pytest tests/code --verbose --disable-warnings
 
 # Data
-export DATASET_LOC="https://raw.githubusercontent.com/GokuMohandas/Made-With-ML/main/datasets/dataset.csv"
+export DATASET_LOC="https://raw.githubusercontent.com/agusabdulrahman/Made-With-ML/main/datasets/dataset.csv"
 pytest --dataset-loc=$DATASET_LOC tests/data --verbose --disable-warnings
 
 # Model
@@ -507,7 +507,7 @@ git remote set-url origin https://github.com/$GITHUB_USERNAME/Made-With-ML.git  
 git checkout -b dev
 ```
 
-2. We'll start by adding the necessary credentials to the [`/settings/secrets/actions`](https://github.com/GokuMohandas/Made-With-ML/settings/secrets/actions) page of our GitHub repository.
+2. We'll start by adding the necessary credentials to the [`/settings/secrets/actions`](https://github.com/agusabdulrahman/Made-With-ML/settings/secrets/actions) page of our GitHub repository.
 
 ```bash
 export ANYSCALE_HOST=https://console.anyscale.com
