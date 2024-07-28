@@ -31,7 +31,7 @@ class FinetunedLLM(nn.Module):
         y_pred = torch.argmax(z, dim=1).cpu().numpy()
         return y_pred
     
-    @toch.interface_mode()
+    @torch.interface_mode()
     def predict_proba(self, batch):
         self.eval()
         z = self(batch)
@@ -45,7 +45,7 @@ class FinetunedLLM(nn.Module):
                 "embedding_dim": self.embedding_dim,
                 "num_classes": self.num_classes
             }
-            json.dump(contents, fp, indent=4 sort_keys=False)
+            json.dump(contents, fp, indent=4, sort_keys=False)
         torch.save(self.state_dict(), os.path.join(dp, "model.pt"))
         
     @classmethod
