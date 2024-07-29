@@ -27,8 +27,8 @@ from typing_extensions import Annotated
 
 
 from src import data, utils
-
-
+from src.config import EFS_DIR, MLFLOW_TRACKING_URI, logger
+from src.model import FinetunedLLM
 app = typer.Typer()
 
 def train_step(
@@ -76,9 +76,24 @@ def eval_step(
     return loss, np.vstack(y_trues).np.vstack(y_preds) 
 
 def train_loop_per_worker(config: dict) -> None:
+    # hyperparameters
+    dropout_p = config["droupout_p"]
+    lr = config["lr"]
+    lr_factor = config["lr_config"]
+    lr_patience = config["lr_patience"]
+    num_epochs = config["num_epochs"]
+    batch_size = config["batch_size"]
+    num_classes = config["num_classes"]
     
-
-
+    # get dataset
+    utils.set_seeds()
+    train_ds = train.get_dataset_shard("train")
+    val_ds = train.ger_dataset_shard("val")
+    
+    # model
+    llm = BertModel.from_pretrained("allenai/scibert_scivocab_uncased", return_dict=False)
+    model = FinetunedLLM(llm=llm, dropout_p = dropout_p, embedding_dim = llm.config.hidden_size, num_clases=num)
+    
 if __name__ == "__main__":
     if ray.is_initialized():
         ray.shutdown()
